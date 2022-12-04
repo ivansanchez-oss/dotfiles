@@ -109,11 +109,6 @@ _G.packer_plugins = {
     path = "/home/ivan/.local/share/nvim/site/pack/packer/start/gruvbox.nvim",
     url = "https://github.com/ellisonleao/gruvbox.nvim"
   },
-  ["impatient.nvim"] = {
-    loaded = true,
-    path = "/home/ivan/.local/share/nvim/site/pack/packer/start/impatient.nvim",
-    url = "https://github.com/lewis6991/impatient.nvim"
-  },
   ["nvim-cmp"] = {
     loaded = true,
     path = "/home/ivan/.local/share/nvim/site/pack/packer/start/nvim-cmp",

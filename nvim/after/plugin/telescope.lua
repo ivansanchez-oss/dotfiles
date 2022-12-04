@@ -5,7 +5,7 @@ vim.keymap.set('n', '<leader>fb', builtin.buffers, {})
 vim.keymap.set('n', '<leader>fh', builtin.help_tags, {})
 
 
-vim.api.nvim_set_hl(0, "NormalFloat", {bg="#282828"})
+
 vim.api.nvim_set_hl(0, "TelescopePromptBorder", {bg="#282828"})
 vim.api.nvim_set_hl(0, "TelescopeResultsBorder", {bg="#282828"})
 vim.api.nvim_set_hl(0, "TelescopePreviewBorder", {bg="#282828"})

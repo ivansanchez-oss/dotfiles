@@ -1,8 +1,3 @@
--- This file can be loaded by calling `lua require('plugins')` from your init.vim
-
--- Only required if you have packer configured as `opt`
-vim.cmd [[packadd packer.nvim]]
-
 return require('packer').startup(function()
     use 'wbthomason/packer.nvim'
 
@@ -24,13 +19,13 @@ return require('packer').startup(function()
     use 'hrsh7th/cmp-buffer'                            
     use 'hrsh7th/vim-vsnip'
    
-    -- Faster Starup
-    use 'lewis6991/impatient.nvim'
-
     -- Telescope
     use {
         'nvim-telescope/telescope.nvim', tag = '0.1.0',
-         requires = { {'nvim-lua/plenary.nvim'} }
+        requires = { {'nvim-lua/plenary.nvim'} }
     }
+    
+    -- Gui
+    use 'beauwilliams/statusline.lua'
 
   end)
