@@ -26,4 +26,11 @@ return require('packer').startup(function()
    
     -- Faster Starup
     use 'lewis6991/impatient.nvim'
+
+    -- Telescope
+    use {
+        'nvim-telescope/telescope.nvim', tag = '0.1.0',
+         requires = { {'nvim-lua/plenary.nvim'} }
+    }
+
   end)
