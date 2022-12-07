@@ -18,6 +18,9 @@ return require('packer').startup(function()
     use 'hrsh7th/cmp-path'                              
     use 'hrsh7th/cmp-buffer'                            
     use 'hrsh7th/vim-vsnip'
+
+    -- Highlight
+    use 'nvim-treesitter/nvim-treesitter'
    
     -- Telescope
     use {
