@@ -14,15 +14,6 @@ local function on_attach(client, buffer)
     vim.keymap.set("n", "gW", vim.lsp.buf.workspace_symbol, keymap_opts)
     vim.keymap.set("n", "gd", vim.lsp.buf.definition, keymap_opts)
 
-    -- Show diagnostic popup on cursor hover
-    local diag_float_grp = vim.api.nvim_create_augroup("DiagnosticFloat", { clear = true })
-    vim.api.nvim_create_autocmd("CursorHold", {
-      callback = function()
-        vim.diagnostic.open_float(nil, { focusable = false })
-      end,
-      group = diag_float_grp,
-    })
-
     -- Goto previous/next diagnostic warning/error
     vim.keymap.set("n", "g[", vim.diagnostic.goto_prev, keymap_opts)
     vim.keymap.set("n", "g]", vim.diagnostic.goto_next, keymap_opts)

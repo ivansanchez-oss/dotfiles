@@ -9,6 +9,11 @@ vim.diagnostic.config({
     },
 })
 
+local opts = { noremap=true, silent=true }
+vim.keymap.set('n', 'E', vim.diagnostic.open_float, opts)
+
+
+
 --Set completeopt to have a better completion experience
 -- :help completeopt
 -- menuone: popup even when there's only one match
@@ -33,6 +38,8 @@ local border = {
         { "╰", "FloatBorder" },
         { "│", "FloatBorder" },
 }
+
+vim.cmd [[autocmd BufWritePre * lua vim.lsp.buf.formatting_sync()]]
 
 local orig_util_open_floating_preview = vim.lsp.util.open_floating_preview
 function vim.lsp.util.open_floating_preview(contents, syntax, opts, ...)
