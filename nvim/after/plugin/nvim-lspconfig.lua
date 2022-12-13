@@ -38,7 +38,10 @@ local function on_attach_rust(client, buffer)
   vim.keymap.set("n", "g]", vim.diagnostic.goto_next, keymap_opts)
 end
 
+local capabilities = require('cmp_nvim_lsp').default_capabilities()
+
 local opts = {
+  capabilities = capabilities,
   tools = { -- rust-tools options
     inlay_hints = {
       auto = true,
@@ -58,6 +61,7 @@ rt.setup(opts)
 
 require('lspconfig')['pyright'].setup{
   on_attach = on_attach,
+  capabilities = capabilities,
   settings = {
     python = {
       analysis = {
@@ -69,4 +73,6 @@ require('lspconfig')['pyright'].setup{
 
 require('lspconfig')['clangd'].setup{
     on_attach = on_attach,
+    capabilities = capabilities,
 }
+

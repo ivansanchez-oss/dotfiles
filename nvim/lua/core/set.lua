@@ -6,6 +6,8 @@ vim.opt.ignorecase = true
 vim.opt.expandtab = true
 -- clear highlight from last search pattern
 vim.keymap.set('n','<leader>h',':nohlsearch<CR>')
+-- print the line number in front of each line
+vim.opt.nu = true
 
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
