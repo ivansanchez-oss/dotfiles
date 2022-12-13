@@ -18,14 +18,17 @@ return require('packer').startup(function(use)
   use 'ellisonleao/gruvbox.nvim'
   use 'nvim-tree/nvim-tree.lua'
   use 'nvim-tree/nvim-web-devicons'
-  use 'beauwilliams/statusline.lua'
+  use 'nvim-lualine/lualine.nvim'
 
   -- Highlight
-  use 'nvim-treesitter/nvim-treesitter'
+  -- use 'nvim-treesitter/nvim-treesitter'
+  
+  -- LSP
+  use 'neovim/nvim-lspconfig'
 
   -- Telescope
-  use 'nvim-telescope/telescope.nvim'
   use 'nvim-lua/plenary.nvim'
+  use 'nvim-telescope/telescope.nvim'
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
