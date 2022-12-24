@@ -17,6 +17,7 @@ vim.opt.softtabstop = 0
 vim.opt.shiftwidth = 0
 vim.opt.smartindent = true
 vim.opt.wrap = false
+vim.opt.clipboard = 'unnamedplus'
 
 vim.api.nvim_set_hl(0, "NormalFloat", {bg="#282828"})
 vim.api.nvim_set_hl(0, "ColorColumn", {bg="#282828"})
