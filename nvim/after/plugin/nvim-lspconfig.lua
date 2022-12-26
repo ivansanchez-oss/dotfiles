@@ -76,3 +76,19 @@ require('lspconfig')['clangd'].setup{
     capabilities = capabilities,
 }
 
+local capabilities_html = vim.lsp.protocol.make_client_capabilities()
+capabilities_html.textDocument.completion.completionItem.snippetSupport = true
+
+require('lspconfig').html.setup {
+  capabilities = capabilities_html,
+  on_attach = on_attach,
+  init_options = {
+    configurationSection = { "html", "css", "javascript" },
+    embeddedLanguages = {
+      css = true,
+      javascript = true
+    },
+    provideFormatter = true
+  }
+}
+
