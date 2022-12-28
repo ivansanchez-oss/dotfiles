@@ -92,3 +92,12 @@ require('lspconfig').html.setup {
   }
 }
 
+require'lspconfig'.cssls.setup {
+  capabilities = capabilities_html,
+  on_attach = on_attach,
+}
+
+require'lspconfig'.tsserver.setup{
+  on_attach = on_attach,
+}
+
