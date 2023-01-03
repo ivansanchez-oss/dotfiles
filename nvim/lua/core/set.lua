@@ -59,7 +59,7 @@ vim.wo.signcolumn = "yes"
 
 local format_sync_grp = vim.api.nvim_create_augroup("Format", {})
 vim.api.nvim_create_autocmd("BufWritePre", {
-  pattern = "*.rs",
+  pattern = {"*.rs","*.html","*.py","*.js","*.css"},
   callback = function()
     vim.lsp.buf.format({ timeout_ms = 200 })
   end,
