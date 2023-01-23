@@ -12,7 +12,7 @@ vim.opt.nu = true
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 vim.opt.relativenumber = false
-vim.opt.tabstop = 2
+vim.opt.tabstop = 4
 vim.opt.softtabstop = 0
 vim.opt.shiftwidth = 0
 vim.opt.smartindent = true
@@ -21,6 +21,7 @@ vim.opt.clipboard = 'unnamedplus'
 
 vim.api.nvim_set_hl(0, "NormalFloat", {bg="#282828"})
 vim.api.nvim_set_hl(0, "ColorColumn", {bg="#282828"})
+
 
 local border = {
         { "╭", "FloatBorder" },
@@ -44,13 +45,27 @@ end
 -- 300ms of no cursor movement to trigger CursorHold
 vim.opt.updatetime = 100
 
--- Show diagnostic popup on cursor hover
-local diag_float_grp = vim.api.nvim_create_augroup("DiagnosticFloat", { clear = true })
 vim.api.nvim_create_autocmd("CursorHold", {
+  buffer = bufnr,
   callback = function()
-   vim.diagnostic.open_float(nil, { focusable = false })
-  end,
-  group = diag_float_grp,
+    local opts = {
+      focusable = false,
+      close_events = { "BufLeave", "CursorMoved", "InsertEnter", "FocusLost" },
+      border = 'rounded',
+      source = 'always',
+      prefix = ' ',
+      scope = 'cursor',
+    }
+    vim.diagnostic.open_float(nil, opts)
+  end
+})
+
+vim.diagnostic.config({
+  virtual_text = true,
+  signs = true,
+  underline = true,
+  update_in_insert = true,
+  severity_sort = false,
 })
 
 -- have a fixed column for the diagnostics to appear in
@@ -59,7 +74,7 @@ vim.wo.signcolumn = "yes"
 
 local format_sync_grp = vim.api.nvim_create_augroup("Format", {})
 vim.api.nvim_create_autocmd("BufWritePre", {
-  pattern = {"*.rs","*.html","*.py","*.js","*.css"},
+  pattern = {"*.rs","*.html","*.py","*.js"},
   callback = function()
     vim.lsp.buf.format({ timeout_ms = 200 })
   end,
