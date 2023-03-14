@@ -28,6 +28,7 @@ return require('packer').startup(function(use)
   -- Highlight
   use 'nvim-treesitter/nvim-treesitter'
   use 'lukas-reineke/indent-blankline.nvim'
+  use 'nvim-treesitter/playground'
 
   -- Completion
   use 'hrsh7th/nvim-cmp'
