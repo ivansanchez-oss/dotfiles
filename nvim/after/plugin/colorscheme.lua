@@ -1,13 +1,13 @@
 require("gruvbox").setup({
     italic = false,
     overrides = {
-        SignColumn = {bg = "#1d2021"},
-        GruvboxRedSign = { bg = "#cc241d"},
-        GruvboxGreenSign = { bg = "#98971a"},
-        GruvboxYellowSign = { bg = "#d79921"},
-        GruvboxBlueSign = { bg = "#458588"},
-        GruvboxPurpleSign = { bg = "#b16286"},
-        GruvboxAquaSign = { bg = "#689d6a"},
+        SignColumn = {bg = "#1c1c1c"},
+        GruvboxRedSign = { bg = "#1c1c1c"},
+        GruvboxGreenSign = { bg = "#1c1c1c"},
+        GruvboxYellowSign = { bg = "#1c1c1c"},
+        GruvboxBlueSign = { bg = "#1c1c1c"},
+        GruvboxPurpleSign = { bg = "#1c1c1c"},
+        GruvboxAquaSign = { bg = "#1c1c1c"},
  
     }
 })
