@@ -23,7 +23,7 @@ return require('packer').startup(function(use)
     use 'saadparwaiz1/cmp_luasnip'
 
     -- LSP
-    use 'williamboman/mason.nvim'
+    -- use 'williamboman/mason.nvim'
 
     -- Highlight
     use 'nvim-treesitter/nvim-treesitter'

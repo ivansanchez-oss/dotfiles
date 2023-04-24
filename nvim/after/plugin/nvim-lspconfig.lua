@@ -122,7 +122,7 @@ require 'lspconfig'.lua_ls.setup {
                 -- NOTE: the value should be STRING!!
                 defaultConfig = {
                     indent_style = "space",
-                    indent_size = "2",
+                    indent_size = "4",
                 }
             },
             runtime = {
