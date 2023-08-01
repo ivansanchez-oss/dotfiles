@@ -8,3 +8,13 @@ vim.keymap.set('n', '<leader>fh', builtin.help_tags, {})
 vim.api.nvim_set_hl(0, "TelescopePromptBorder", { bg = "#1c1c1c" })
 vim.api.nvim_set_hl(0, "TelescopeResultsBorder", { bg = "#1c1c1c" })
 vim.api.nvim_set_hl(0, "TelescopePreviewBorder", { bg = "#1c1c1c" })
+
+require('telescope').setup {
+    defaults = {
+        mappings = {
+            i = {
+                ["<c-d>"] = "delete_buffer",
+            }
+        }
+    },
+}
