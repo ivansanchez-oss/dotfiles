@@ -70,10 +70,10 @@ require('lspconfig')['pyright'].setup {
     }
 }
 
-require('lspconfig')['clangd'].setup {
-    on_attach = on_attach,
-    capabilities = capabilities,
-}
+-- require('lspconfig')['clangd'].setup {
+--     on_attach = on_attach,
+--     capabilities = capabilities,
+-- }
 
 local capabilities_html = vim.lsp.protocol.make_client_capabilities()
 capabilities_html.textDocument.completion.completionItem.snippetSupport = true
@@ -96,7 +96,7 @@ require('lspconfig').cssls.setup {
     on_attach = on_attach,
 }
 
-require('lspconfig').tsserver.setup {
+require('lspconfig').ts_ls.setup {
     on_attach = on_attach,
 }
 
